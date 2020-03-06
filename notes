@@ -1,0 +1,11 @@
+Sometimes, we need to make sure that all the required dependencies are set to the spring bean. 
+Spring provides @Required annotation to check spring dependencies. If the required dependencies are 
+not set, then it throws BeanInitializationException
+
+Here is the xml based configuration, make sure that you are adding <context:annotation-config /> 
+tag and yu are registering RequiredAnnotationBeanPostProcessor in your spring configurations to enable
+ @Required annotation.
+ 
+To disable or skip the @Required annotation for a class we can configure the bean definition with a meta 
+element with the org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor.skipRequiredCheck 
+and assign a value of true. This will skip the required annotation completely for that class.
